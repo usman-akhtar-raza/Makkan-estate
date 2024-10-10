@@ -6,6 +6,9 @@ import Card from "./components/card/card";
 import SearchBar from "./components/searchBar/searchBar";
 import FadeUpOnScroll from "./components/fadeUpOnScroll/fadeUpOnscroll";
 import { FaCheck } from "react-icons/fa";
+import PropertyCard from "./components/propertyCard/propertyCard";
+import FadeLeftOnScroll from "./components/fadeLeftOnScroll/fadeLeftOnScroll";
+import FadeRightOnScroll from "./components/fadeRightOnScroll/fadeRightOnScroll";
 const data = [
   {
     url: "/images/icon-apartment.png",
@@ -58,6 +61,52 @@ const data = [
   //   subtitle: "lorem",
   // },
 ];
+
+const propertyList = [
+  {
+    price: 12345,
+    status: "For Rent",
+    category: "Villa",
+    location: "123 Street, Pakistan",
+    url: "/images/property-1.jpg",
+  },
+  {
+    price: 50000,
+    status: "For Sale",
+    category: "Apartment",
+    location: "456 Avenue, Lahore, Pakistan",
+    url: "/images/property-2.jpg",
+  },
+  {
+    price: 30000,
+    status: "For Rent",
+    category: "Townhouse",
+    location: "789 Road, Karachi, Pakistan",
+    url: "/images/property-3.jpg",
+  },
+  {
+    price: 25000,
+    status: "For Rent",
+    category: "Penthouse",
+    location: "321 Lane, Islamabad, Pakistan",
+    url: "/images/property-4.jpg",
+  },
+  {
+    price: 75000,
+    status: "For Sale",
+    category: "Bungalow",
+    location: "654 Boulevard, Multan, Pakistan",
+    url: "/images/property-5.jpg",
+  },
+  {
+    price: 45000,
+    status: "For Rent",
+    category: "Cottage",
+    location: "987 Street, Murree, Pakistan",
+    url: "/images/property-6.jpg",
+  },
+];
+
 export default function Home() {
   return (
     <>
@@ -139,6 +188,53 @@ export default function Home() {
                 </div>
               </div>
             </div>
+          </div>
+        </FadeUpOnScroll>
+
+        <div className="  flex justify-between flex-wrap space-y-6 mt-[450px] md:mt-0 md:mx-20 mb-10">
+          <FadeLeftOnScroll>
+            <div className="col-span-6">
+              <h1 className="text-4xl font-bold">Property Listing</h1>
+              <p className="mt-5">
+                Eirmod sed ipsum dolor sit rebum labore magna erat. Tempor ut
+                dolore <br /> lorem kasd vero ipsum sit eirmod sit diam justo
+                sed rebum.
+              </p>
+            </div>
+          </FadeLeftOnScroll>
+          <FadeRightOnScroll>
+            <div className="space-x-4 md:ml-auto col-span-6">
+              <button className="bg-[#00B98E] text-white mt-10 rounded-md hover:bg-[#00B98E] px-4 py-2">
+                Featured
+              </button>
+              <button className="border border-[#00B98E] mt-10 transition-all duration-1000 hover:text-white  rounded-md hover:bg-[#00B98E] px-4 py-2">
+                For Rent
+              </button>
+              <button className="border border-[#00B98E] mt-10 transition-all duration-1000 hover:text-white  rounded-md hover:bg-[#00B98E] px-4 py-2">
+                For sell
+              </button>
+            </div>
+          </FadeRightOnScroll>
+        </div>
+        <FadeUpOnScroll>
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 mx-auto gap-y-6 lg:ml-20">
+            {propertyList.map((item) => {
+              return (
+                <PropertyCard
+                  url={item.url}
+                  key={item.price}
+                  price={item.price}
+                  status={item.status}
+                  category={item.category}
+                  location={item.location}
+                />
+              );
+            })}
+          </div>
+          <div className="flex justify-center">
+            <button className="bg-[#00B98E] text-white mt-10 rounded-md hover:bg-[#00b963] px-6 py-4 ">
+              Browse more property
+            </button>
           </div>
         </FadeUpOnScroll>
       </div>
