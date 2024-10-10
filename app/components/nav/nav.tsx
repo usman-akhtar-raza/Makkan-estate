@@ -43,7 +43,7 @@ export default function Navbar() {
               alt="Logo"
               className="h-8 w-8"
             />
-            <span className="text-xl font-bold text-green-500 ml-2">
+            <span className="text-xl font-bold text-[#00B98E] ml-2">
               Makaan
             </span>
           </div>
@@ -53,13 +53,13 @@ export default function Navbar() {
         <div className="hidden md:flex space-x-6 items-center">
           <Link
             href="/"
-            className="text-green-500 font-medium hover:text-green-600"
+            className="text-[#00B98E] font-medium hover:text-[#00B98E]"
           >
             HOME
           </Link>
           <Link
             href="/about"
-            className="text-gray-600 font-medium hover:text-green-600"
+            className="text-gray-600 font-medium hover:text-[#00B98E]"
           >
             ABOUT
           </Link>
@@ -67,7 +67,7 @@ export default function Navbar() {
           {/* Property Dropdown */}
           <div className="relative">
             <button
-              className="text-gray-600 font-medium hover:text-green-600"
+              className="text-gray-600 font-medium hover:text-[#00B98E]"
               onClick={() => setPropertyDropdownOpen(!isPropertyDropdownOpen)}
             >
               PROPERTY <span>▼</span>
@@ -101,7 +101,7 @@ export default function Navbar() {
           {/* Pages Dropdown */}
           <div className="relative">
             <button
-              className="text-gray-600 font-medium hover:text-green-600"
+              className="text-gray-600 font-medium hover:text-[#00B98E]"
               onClick={() => setPagesDropdownOpen(!isPagesDropdownOpen)}
             >
               PAGES <span>▼</span>
@@ -134,7 +134,7 @@ export default function Navbar() {
 
           <Link
             href="/contact"
-            className="text-gray-600 font-medium hover:text-green-600"
+            className="text-gray-600 font-medium hover:text-[#00B98E]"
           >
             CONTACT
           </Link>
@@ -144,7 +144,7 @@ export default function Navbar() {
         <div>
           <Link
             href="/add-property"
-            className="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600"
+            className="bg-[#00B98E] text-white px-4 py-2 rounded-md hover:bg-[#00B98E]"
           >
             Add Property
           </Link>

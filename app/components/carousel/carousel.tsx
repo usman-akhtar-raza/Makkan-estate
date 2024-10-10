@@ -1,44 +1,15 @@
-// "use client";
-// import React, { useRef, useState } from "react";
-// // Import Swiper React components
-// import { Swiper, SwiperSlide } from "swiper/react";
-
-// // Import Swiper styles
-// import "swiper/css";
-
-// // import "./styles.css";
-
-// export default function Carousel() {
-//   return (
-//     <>
-//       <Swiper className=" h-[600px] mt-[-100px] mySwiper">
-//         <SwiperSlide>
-//           <img src="/images/carousel-1.jpg" alt="" />
-//         </SwiperSlide>
-//         <SwiperSlide>
-//           {" "}
-//           <img src="/images/carousel-2.jpg" alt="" />
-//         </SwiperSlide>
-//       </Swiper>
-//     </>
-//   );
-// }
 "use client";
-import React, { useRef, useState } from "react";
-// Import Swiper React components
+import React from "react";
+import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-// import './styles.css';
-
-// import required modules
 import { Autoplay, Navigation } from "swiper/modules";
 
-export default function App() {
+export default function Carousel() {
   return (
     <>
       <Swiper
@@ -50,18 +21,15 @@ export default function App() {
         }}
         navigation={true}
         modules={[Autoplay, Navigation]}
-        className="mySwiper"
+        className="mySwiper mt-[-100px] w-[700px]"
       >
-        {/* <Swiper className=" h-[600px] mt-[-100px] mySwiper"> */}
-
         <SwiperSlide>
-          <img src="/images/carousel-1.jpg" alt="" />
+          <Image src="/images/carousel-1.jpg" alt="" width={700} height={400} />
         </SwiperSlide>
         <SwiperSlide>
           {" "}
-          <img src="/images/carousel-2.jpg" alt="" />
+          <Image src="/images/carousel-2.jpg" alt="" width={700} height={400} />
         </SwiperSlide>
-        {/* </Swiper> */}
       </Swiper>
     </>
   );

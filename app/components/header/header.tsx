@@ -1,5 +1,3 @@
-import Image from "next/image";
-import dynamic from 'next/dynamic';
 
 import Carousel from "../carousel/carousel";
 
@@ -13,33 +11,26 @@ function Header({}) {
       <main>
         <div className="grid grid-cols-12 gap-4">
           {/* Left column: Heading, subtitle, and button */}
-          <div className=" col-span-12 md:col-span-6">
-            <h1 className="animate-fade text-3xl font-bold">Its heading</h1>
-            <p className="animate-fade text-lg text-gray-600 mt-2">Subtitle</p>
-            <button className="animate-fade mt-4 px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600">
-              View Project
+          <div className=" col-span-12 md:col-span-6  mx-20 mt-12">
+            <h1 className="text-[#0e2e50] animate-fade text-4xl font-extrabold">
+              Find A{" "}
+              <span className=" text-[#00B98E] animate-fade">Perfect Home</span>{" "}
+              To Live With Your Family
+            </h1>
+            <p className="animate-fade text-lg text-gray-600 mt-2">
+              Vero elitr justo clita lorem. Ipsum dolor at sed stet sit diam no.
+              Kasd rebum ipsum et diam justo clita et kasd rebum sea elitr.
+            </p>
+            <button className="animate-fade mt-4 px-6 py-4 bg-[#00B98E] text-white rounded hover:bg-[#2fe7bc]">
+              Get Started
             </button>
           </div>
 
           {/* Right column: Image */}
           <div className="col-span-12 md:col-span-6 flex justify-center">
-            {/* <OwlCarouselComponent items={items} /> */}
-            {/* <Image
-              src={"/images/carousel-1.jpg"}
-              alt="image"
-              width={800}
-              height={800}
-              className=""
-              /> */}
-              <Carousel/>
-            {/* <Image
-              src={"/images/carousel-2.jpg"}
-              alt="image"
-              width={800}
-              height={800}
-              className=""
-            /> */}
+            <Carousel />
           </div>
+          
         </div>
       </main>
     </>

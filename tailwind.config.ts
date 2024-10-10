@@ -20,8 +20,8 @@ const config: Config = {
       keyframes: (theme) => ({
         fadeOut: {
           "0%": {
-            color: theme("colors.transparent"),
-            backgroundColor: theme("colors.transparent"),
+            color: theme.colors.transparent,
+            backgroundColor: theme.colors.transparent,
           },
           "100%": { color: "inherit", backgroundColor: "inherit" },
         },

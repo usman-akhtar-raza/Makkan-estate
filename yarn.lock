@@ -1220,6 +1220,13 @@ foreground-child@^3.1.0:
     cross-spawn "^7.0.0"
     signal-exit "^4.0.1"
 
+framer-motion@^11.11.2:
+  version "11.11.2"
+  resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-11.11.2.tgz#08b7ea77226a65517e9fa119be10d67ad9ae9241"
+  integrity sha512-Sj2xao1t5MskcCVJawfAhbTOP4IGEjFWE7ebiyd4Lo5yzKP3pkSMyaCtzM6D0uAT7ozNTgZcUorEsCWAIxHfZA==
+  dependencies:
+    tslib "^2.4.0"
+
 fs.realpath@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/fs.realpath/-/fs.realpath-1.0.0.tgz#1504ad2523158caa40db4a2787cb01411994ea4f"
@@ -2145,6 +2152,11 @@ react-dom@^18:
   dependencies:
     loose-envify "^1.1.0"
     scheduler "^0.23.2"
+
+react-icons@^5.3.0:
+  version "5.3.0"
+  resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-5.3.0.tgz#ccad07a30aebd40a89f8cfa7d82e466019203f1c"
+  integrity sha512-DnUk8aFbTyQPSkCfF8dbX6kQjXA9DktMeJqfjrg6cK9vwQVMxmcA3BfP4QoiztVmEHtwlTgLFsPuH2NskKT6eg==
 
 react-is@^16.13.1:
   version "16.13.1"
