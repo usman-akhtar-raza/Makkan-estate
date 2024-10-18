@@ -5,10 +5,12 @@ import Header from "./components/header/header";
 import Card from "./components/card/card";
 import SearchBar from "./components/searchBar/searchBar";
 import FadeUpOnScroll from "./components/fadeUpOnScroll/fadeUpOnscroll";
-import { FaCheck } from "react-icons/fa";
+import { FaCheck, FaPhone, FaCalendar } from "react-icons/fa";
 import PropertyCard from "./components/propertyCard/propertyCard";
 import FadeLeftOnScroll from "./components/fadeLeftOnScroll/fadeLeftOnScroll";
 import FadeRightOnScroll from "./components/fadeRightOnScroll/fadeRightOnScroll";
+import TeamCard from "./components/teamCard/teamCard";
+import teamData from "../data/data";
 const data = [
   {
     url: "/images/icon-apartment.png",
@@ -235,6 +237,75 @@ export default function Home() {
             <button className="bg-[#00B98E] text-white mt-10 rounded-md hover:bg-[#00b963] px-6 py-4 ">
               Browse more property
             </button>
+          </div>
+        </FadeUpOnScroll>
+        {/* cta */}
+        <FadeUpOnScroll>
+          <div className=" m-24 bg-[#effdf5] p-4 rounded-md  ">
+            <div className="flex bg-white h-full  text-center p-4 border-dashed border mx-auto border-[#00B98E] rounded-md">
+              <Image
+                src={"/images/call-to-action.jpg"}
+                alt={"call to action "}
+                width={500}
+                height={500}
+                className="rounded-lg"
+              />
+              <div className="ml-16 space-y-4 mt-12 text-start">
+                <h1 className="font-semibold text-5xl  text-[#0e2e50]">
+                  Contact With Our <br /> Certified Agent
+                </h1>
+                <p className="text-gray-500">
+                  Eirmod sed ipsum dolor sit rebum magna erat. Tempor lorem kasd
+                  vero ipsum <br />
+                  sit sit diam justo sed vero dolor duo.
+                </p>
+                <div className="flex  space-x-4">
+                  <button className="flex text-white bg-[#00B98E] mt-10 rounded-md   hover:bg-[#00B95E] px-6 py-4">
+                    <FaPhone size={20} className="mr-1" />
+                    Make A Call
+                  </button>
+                  <button className="flex text-white bg-[#0e2e50] mt-10 rounded-md   hover:bg-[#0e2e60] px-6 py-4  ">
+                    <FaCalendar size={20} className="mr-1" />
+                    Get Appointment
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </FadeUpOnScroll>
+        {/* our team */}
+        <FadeUpOnScroll>
+          <div className="flex flex-col text-center space-y-5">
+            <h1 className="text-5xl font-bold text-[#0e2e50] ">Our Team</h1>
+            <p className="text-gray-500">
+              Eirmod sed ipsum dolor sit rebum labore magna erat. Tempor ut
+              dolore lorem kasd <br />
+              vero ipsum sit eirmod sit. Ipsum diam justo sed rebum vero dolor
+              duo.
+            </p>
+          </div>
+          <div className="flex justify-around mx-20 my-11">
+            {teamData.map(
+              (item: {
+                img: string;
+                name: string;
+                designation: string;
+                facebook: string;
+                instagram: string;
+                twitter: string;
+              }) => {
+                return (
+                  <TeamCard
+                    img={item.img}
+                    name={item.name}
+                    designation={item.designation}
+                    facebook={item.facebook}
+                    instagram={item.instagram}
+                    twitter={item.twitter}
+                  />
+                );
+              }
+            )}
           </div>
         </FadeUpOnScroll>
       </div>
