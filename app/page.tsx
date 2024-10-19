@@ -10,105 +10,9 @@ import PropertyCard from "./components/propertyCard/propertyCard";
 import FadeLeftOnScroll from "./components/fadeLeftOnScroll/fadeLeftOnScroll";
 import FadeRightOnScroll from "./components/fadeRightOnScroll/fadeRightOnScroll";
 import TeamCard from "./components/teamCard/teamCard";
-import teamData from "../data/data";
+import teamData, { data, propertyList } from "../data/data";
 import Testmonial from "./components/testmonial/testmonial";
-const data = [
-  {
-    url: "/images/icon-apartment.png",
-    title: "apartment",
-    subtitle: "lorem",
-  },
-  {
-    url: "/images/icon-building.png",
-    title: "building",
-    subtitle: "lorem",
-  },
-  {
-    url: "/images/icon-condominium.png",
-    title: "condominium",
-    subtitle: "lorem",
-  },
-  {
-    url: "/images/icon-deal copy.png",
-    title: "deal",
-    subtitle: "lorem",
-  },
-  {
-    url: "/images/icon-house.png",
-    title: "house",
-    subtitle: "lorem",
-  },
-  {
-    url: "/images/icon-housing.png",
-    title: "housing",
-    subtitle: "lorem",
-  },
-  {
-    url: "/images/icon-luxury.png",
-    title: "luxury",
-    subtitle: "lorem",
-  },
-  {
-    url: "/images/icon-neighborhood.png",
-    title: "neigborhood",
-    subtitle: "lorem",
-  },
-  // {
-  //   url: "/images/icon-search.png",
-  //   title: "search",
-  //   subtitle: "lorem",
-  // },
-  // {
-  //   url: "/images/icon-villa.png",
-  //   title: "villa",
-  //   subtitle: "lorem",
-  // },
-];
-
-const propertyList = [
-  {
-    price: 12345,
-    status: "For Rent",
-    category: "Villa",
-    location: "123 Street, Pakistan",
-    url: "/images/property-1.jpg",
-  },
-  {
-    price: 50000,
-    status: "For Sale",
-    category: "Apartment",
-    location: "456 Avenue, Lahore, Pakistan",
-    url: "/images/property-2.jpg",
-  },
-  {
-    price: 30000,
-    status: "For Rent",
-    category: "Townhouse",
-    location: "789 Road, Karachi, Pakistan",
-    url: "/images/property-3.jpg",
-  },
-  {
-    price: 25000,
-    status: "For Rent",
-    category: "Penthouse",
-    location: "321 Lane, Islamabad, Pakistan",
-    url: "/images/property-4.jpg",
-  },
-  {
-    price: 75000,
-    status: "For Sale",
-    category: "Bungalow",
-    location: "654 Boulevard, Multan, Pakistan",
-    url: "/images/property-5.jpg",
-  },
-  {
-    price: 45000,
-    status: "For Rent",
-    category: "Cottage",
-    location: "987 Street, Murree, Pakistan",
-    url: "/images/property-6.jpg",
-  },
-];
+import Footer from "./components/footer/footer";
 
 export default function Home() {
   return (
@@ -309,18 +213,23 @@ export default function Home() {
             )}
           </div>
         </FadeUpOnScroll>
-        <div className="flex flex-col items-center justify-center mx-auto my-10 ">
-          <div className="text-center space-y-4">
-            <h1 className="text-5xl font-bold text-[#0e2e50]">
-              Our Clients Say!
-            </h1>
-            <p className="text-gray-500">
-              Eirmod sed ipsum dolor sit rebum labore magna erat. Tempor ut
-              dolore lorem kasd <br /> vero ipsum sit eirmod sit. Ipsum diam
-              justo sed rebum vero dolor duo.
-            </p>
+        <FadeUpOnScroll>
+          <div className="flex flex-col items-center justify-center mx-auto my-10 ">
+            <div className="text-center space-y-4">
+              <h1 className="text-5xl font-bold text-[#0e2e50]">
+                Our Clients Say!
+              </h1>
+              <p className="text-gray-500">
+                Eirmod sed ipsum dolor sit rebum labore magna erat. Tempor ut
+                dolore lorem kasd <br /> vero ipsum sit eirmod sit. Ipsum diam
+                justo sed rebum vero dolor duo.
+              </p>
+            </div>
+            <Testmonial />
           </div>
-          <Testmonial />
+        </FadeUpOnScroll>
+        <div>
+          <Footer/>
         </div>
       </div>
     </>
