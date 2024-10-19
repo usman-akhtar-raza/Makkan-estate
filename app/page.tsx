@@ -11,6 +11,7 @@ import FadeLeftOnScroll from "./components/fadeLeftOnScroll/fadeLeftOnScroll";
 import FadeRightOnScroll from "./components/fadeRightOnScroll/fadeRightOnScroll";
 import TeamCard from "./components/teamCard/teamCard";
 import teamData from "../data/data";
+import Testmonial from "./components/testmonial/testmonial";
 const data = [
   {
     url: "/images/icon-apartment.png",
@@ -308,6 +309,19 @@ export default function Home() {
             )}
           </div>
         </FadeUpOnScroll>
+        <div className="flex flex-col items-center justify-center mx-auto my-10 ">
+          <div className="text-center space-y-4">
+            <h1 className="text-5xl font-bold text-[#0e2e50]">
+              Our Clients Say!
+            </h1>
+            <p className="text-gray-500">
+              Eirmod sed ipsum dolor sit rebum labore magna erat. Tempor ut
+              dolore lorem kasd <br /> vero ipsum sit eirmod sit. Ipsum diam
+              justo sed rebum vero dolor duo.
+            </p>
+          </div>
+          <Testmonial />
+        </div>
       </div>
     </>
   );
