@@ -16,16 +16,27 @@ export default function Testmonial() {
   return (
     <>
       <Swiper
-        spaceBetween={3}
+        breakpoints={{
+          640: {
+            slidesPerView: 1,
+          },
+          768: {
+            slidesPerView: 1,
+          },
+          1024: {
+            slidesPerView: 2,
+          },
+        }}
+        spaceBetween={10}
         centeredSlides={true}
-        slidesPerView={2}
+        // slidesPerView={2}
         autoplay={{
           delay: 2500,
           disableOnInteraction: false,
         }}
         navigation={true}
         modules={[Autoplay, Navigation]}
-        className="mySwiper w-[900px]"
+        className="mySwiper w-[350px] md:w-[700px] lg:w-[900px]"
       >
         <SwiperSlide>
           <TestiminomialCard
