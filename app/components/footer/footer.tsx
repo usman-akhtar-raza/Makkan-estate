@@ -10,7 +10,7 @@ import {
   FaInbox,
   FaAngleRight,
 } from "react-icons/fa";
-import { FaArrowRight } from "react-icons/fa6";
+
 
 function Footer() {
   return (
