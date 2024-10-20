@@ -1,10 +1,7 @@
 
 import Carousel from "../carousel/carousel";
 
-// const items = [
-//   { image: "/images/carousel-1.jpg", alt: "Image" },
-//   { image: "/images/carousel-2.jpg", alt: "Image" },
-// ];
+
 function Header({}) {
   return (
     <>

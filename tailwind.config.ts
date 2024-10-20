@@ -14,7 +14,7 @@ const config: Config = {
         foreground: "var(--foreground)",
       },
       animation: {
-        fade: "fadeOut 5s ease-in-out",
+        fade: "fadeOut 1s ease-in-out",
       },
 
       keyframes: (theme) => ({

@@ -201,6 +201,7 @@ export default function Home() {
               }) => {
                 return (
                   <TeamCard
+                    key={item.name}
                     img={item.img}
                     name={item.name}
                     designation={item.designation}
@@ -229,7 +230,7 @@ export default function Home() {
           </div>
         </FadeUpOnScroll>
         <div>
-          <Footer/>
+          <Footer />
         </div>
       </div>
     </>
