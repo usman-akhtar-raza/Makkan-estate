@@ -60,6 +60,17 @@ export default function Home() {
                     height={450}
                   />
 
+
+
+
+
+
+
+
+
+
+
+
                   <div className="flex flex-col justify-center md:ml-10 ml-0 space-y-6">
                     <h1 className="text-4xl font-bold">
                       #1 Place To Find The <br /> Perfect Property
