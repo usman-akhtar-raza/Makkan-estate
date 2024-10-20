@@ -1,6 +1,4 @@
-
 import Carousel from "../carousel/carousel";
-
 
 function Header({}) {
   return (
@@ -24,10 +22,9 @@ function Header({}) {
           </div>
 
           {/* Right column: Image */}
-          <div className="col-span-12 md:col-span-6 flex justify-center">
+          <div className="col-span-12 md:col-span-6 flex justify-center ">
             <Carousel />
           </div>
-          
         </div>
       </main>
     </>

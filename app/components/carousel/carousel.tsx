@@ -21,7 +21,7 @@ export default function Carousel() {
         }}
         navigation={true}
         modules={[Autoplay, Navigation]}
-        className="mySwiper mt-[-100px] w-[700px]"
+        className="mySwiper mt-[100px] md:mt-[-100px] w-[700px]"
       >
         <SwiperSlide>
           <Image src="/images/carousel-1.jpg" alt="" width={700} height={400} />

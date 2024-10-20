@@ -1,7 +1,7 @@
 function SearchBar() {
   return (
     <>
-      <div className=" grid pl-5 lg:pl-10 lg:gap-0 gap-4 md:grid-cols-2 lg:grid-cols-4 bg-[#00B98E] py-10 mt-1">
+      <div className=" grid px-20 lg:pl-10 lg:gap-0 gap-4 md:grid-cols-2 lg:grid-cols-4 bg-[#00B98E] py-10 mt-1">
         <div>
           <input
             type="text"

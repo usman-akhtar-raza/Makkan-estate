@@ -11,12 +11,11 @@ import {
   FaAngleRight,
 } from "react-icons/fa";
 
-
 function Footer() {
   return (
     <>
-      <div className="bg-[#0e2e50] text-white py-10 space-y-8">
-        <div className="px-10 flex justify-around flex-wrap ">
+      <div className="bg-[#0e2e50] text-white py-10 space-y-12">
+        <div className="px-10 flex justify-around flex-wrap md:space-y-0 space-y-6">
           {/* Location and mail */}
           <div className="space-y-4">
             <h1 className="text-xl font-semibold ">Get In Touch</h1>
@@ -176,9 +175,9 @@ function Footer() {
           </div>
         </div>
 
-        <div className="mx-16  h-[1px] bg-gray-600 "></div>
+        <div className="mx-16 max-w-screen-xl h-[1px] bg-gray-600 "></div>
         {/* copy rights wala footer */}
-        <div className="flex justify-between px-20">
+        <div className="flex justify-between flex-wrap md:flex-nowrap md:px-20">
           <p>© 2022 Makaan. All rights reserved.</p>
           <div className="flex space-x-4">
             <div className=" border-r-2 border-gray-500 px-5">Home</div>

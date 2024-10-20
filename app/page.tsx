@@ -50,7 +50,7 @@ export default function Home() {
         <FadeUpOnScroll>
           <div className="grid grid-cols-12 md:mx-20 mt-28 overflow-x-hidden">
             <div className="col-span-6 bg-[#00B98E] relative left-[-50%] h-[600px]  skew-x-[20deg] z-[1]"></div>
-            <div className="absolute my-16 ml-10 z-[2]">
+            <div className="absolute my-16 ml-0 md:ml-10 z-[2]">
               <div className="col-span-12">
                 <div className="flex flex-wrap">
                   <Image
@@ -60,7 +60,7 @@ export default function Home() {
                     height={450}
                   />
 
-                  <div className="flex flex-col justify-center ml-10 space-y-6">
+                  <div className="flex flex-col justify-center md:ml-10 ml-0 space-y-6">
                     <h1 className="text-4xl font-bold">
                       #1 Place To Find The <br /> Perfect Property
                     </h1>
@@ -97,7 +97,7 @@ export default function Home() {
             </div>
           </div>
         </FadeUpOnScroll>
-
+        {/* property card */}
         <div className="  flex justify-between flex-wrap space-y-6 mt-[450px] md:mt-0 md:mx-20 mb-10">
           <FadeLeftOnScroll>
             <div className="col-span-6">
@@ -146,8 +146,8 @@ export default function Home() {
         </FadeUpOnScroll>
         {/* cta */}
         <FadeUpOnScroll>
-          <div className=" m-24 bg-[#effdf5] p-4 rounded-md  ">
-            <div className="flex bg-white h-full  text-center p-4 border-dashed border mx-auto border-[#00B98E] rounded-md">
+          <div className="grid grid-cols-12 mx-auto md:m-24 bg-[#effdf5] p-4 rounded-md  ">
+            <div className="col-span-12  flex flex-wrap lg:flex-nowrap bg-white h-full  text-center p-4 border-dashed border mx-auto border-[#00B98E] rounded-md">
               <Image
                 src={"/images/call-to-action.jpg"}
                 alt={"call to action "}
@@ -189,7 +189,7 @@ export default function Home() {
               duo.
             </p>
           </div>
-          <div className="flex justify-around mx-20 my-11">
+          <div className="flex flex-wrap gap-4 justify-around mx-20 my-11">
             {teamData.map(
               (item: {
                 img: string;
@@ -214,6 +214,7 @@ export default function Home() {
             )}
           </div>
         </FadeUpOnScroll>
+        {/* testiminomials */}
         <FadeUpOnScroll>
           <div className="flex flex-col items-center justify-center mx-auto my-10 ">
             <div className="text-center space-y-4">
@@ -229,6 +230,7 @@ export default function Home() {
             <Testmonial />
           </div>
         </FadeUpOnScroll>
+        {/* footer */}
         <div>
           <Footer />
         </div>
