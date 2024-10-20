@@ -31,7 +31,7 @@ function Footer() {
             <div className=" border-r-2 border-gray-500 px-5">home</div>
             <div className=" border-r-2 border-gray-500 px-5">cookies</div>
             <div className=" border-r-2 border-gray-500 px-5">help</div>
-            <div className=" ">FAQ's</div>
+            <div className=" ">FAQs</div>
           </div>
         </div>
       </div>

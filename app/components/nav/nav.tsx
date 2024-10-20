@@ -157,6 +157,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Navbar() {
   const [isPropertyDropdownOpen, setPropertyDropdownOpen] = useState(false);
@@ -197,7 +198,7 @@ export default function Navbar() {
         {/* Left: Logo */}
         <div className="flex items-center space-x-4">
           <div className="flex items-center">
-            <img src="/images/icon-deal.png" alt="Logo" className="h-8 w-8" />
+            <Image src="/images/icon-deal.png" alt="Logo" width={32} height={32} />
             <span className="text-xl font-bold text-[#00B98E] ml-2">
               Makaan
             </span>
