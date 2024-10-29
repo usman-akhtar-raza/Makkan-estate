@@ -1,5 +1,5 @@
 "use client";
-import teamData, { data, propertyList } from "@/data/data";
+import teamData from "@/data/data";
 import Nav from "../components/nav/nav";
 import Header from "../components/header/header";
 import Image from "next/image";
