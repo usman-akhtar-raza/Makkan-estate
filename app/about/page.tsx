@@ -1,18 +1,13 @@
 "use client";
+import teamData, { data, propertyList } from "@/data/data";
+import Nav from "../components/nav/nav";
+import Header from "../components/header/header";
 import Image from "next/image";
-import Nav from "./components/nav/nav";
-import Header from "./components/header/header";
-import Card from "./components/card/card";
-import SearchBar from "./components/searchBar/searchBar";
-import FadeUpOnScroll from "./components/fadeUpOnScroll/fadeUpOnscroll";
+import SearchBar from "../components/searchBar/searchBar";
+import FadeUpOnScroll from "../components/fadeUpOnScroll/fadeUpOnscroll";
 import { FaCheck, FaPhone, FaCalendar } from "react-icons/fa";
-import PropertyCard from "./components/propertyCard/propertyCard";
-import FadeLeftOnScroll from "./components/fadeLeftOnScroll/fadeLeftOnScroll";
-import FadeRightOnScroll from "./components/fadeRightOnScroll/fadeRightOnScroll";
-import TeamCard from "./components/teamCard/teamCard";
-import teamData, { data, propertyList } from "../data/data";
-import Testmonial from "./components/testmonial/testmonial";
-import Footer from "./components/footer/footer";
+import Footer from "../components/footer/footer";
+import TeamCard from "../components/teamCard/teamCard";
 
 export default function Home() {
   return (
@@ -22,30 +17,6 @@ export default function Home() {
         <Header />
         <FadeUpOnScroll>
           <SearchBar />
-        </FadeUpOnScroll>
-
-        <FadeUpOnScroll>
-          <div className="text-center space-y-6 my-16">
-            <h1 className="text-4xl font-bold">Property Types</h1>
-            <p>
-              Eirmod sed ipsum dolor sit rebum labore magna erat. Tempor ut
-              dolore lorem kasd <br /> vero ipsum sit eirmod sit. Ipsum diam
-              justo sed rebum vero dolor duo.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 md:mx-20  gap-4">
-            {data.map((item) => {
-              return (
-                <div key={item.title} className="">
-                  <Card
-                    url={item.url}
-                    title={item.title}
-                    subtitle={item.subtitle}
-                  />
-                </div>
-              );
-            })}
-          </div>
         </FadeUpOnScroll>
         <FadeUpOnScroll>
           <div className="grid grid-cols-12 md:mx-20 mt-28 overflow-x-hidden">
@@ -97,55 +68,9 @@ export default function Home() {
             </div>
           </div>
         </FadeUpOnScroll>
-        {/* property card */}
-        <div className="  flex justify-between flex-wrap space-y-6 mt-[450px] md:mt-0 md:mx-20 mb-10">
-          <FadeLeftOnScroll>
-            <div className="col-span-6">
-              <h1 className="text-4xl font-bold">Property Listing</h1>
-              <p className="mt-5">
-                Eirmod sed ipsum dolor sit rebum labore magna erat. Tempor ut
-                dolore <br /> lorem kasd vero ipsum sit eirmod sit diam justo
-                sed rebum.
-              </p>
-            </div>
-          </FadeLeftOnScroll>
-          <FadeRightOnScroll>
-            <div className="space-x-4 md:ml-auto col-span-6">
-              <button className="bg-[#00B98E] text-white mt-10 rounded-md hover:bg-[#00B98E] px-4 py-2">
-                Featured
-              </button>
-              <button className="border border-[#00B98E] mt-10 transition-all duration-1000 hover:text-white  rounded-md hover:bg-[#00B98E] px-4 py-2">
-                For Rent
-              </button>
-              <button className="border border-[#00B98E] mt-10 transition-all duration-1000 hover:text-white  rounded-md hover:bg-[#00B98E] px-4 py-2">
-                For sell
-              </button>
-            </div>
-          </FadeRightOnScroll>
-        </div>
-        <FadeUpOnScroll>
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 mx-auto gap-y-6 lg:ml-20">
-            {propertyList.map((item) => {
-              return (
-                <PropertyCard
-                  url={item.url}
-                  key={item.price}
-                  price={item.price}
-                  status={item.status}
-                  category={item.category}
-                  location={item.location}
-                />
-              );
-            })}
-          </div>
-          <div className="flex justify-center">
-            <button className="bg-[#00B98E] text-white mt-10 rounded-md hover:bg-[#00b963] px-6 py-4 ">
-              Browse more property
-            </button>
-          </div>
-        </FadeUpOnScroll>
-        {/* cta */}
-        <FadeUpOnScroll>
+
+             {/* cta */}
+             <FadeUpOnScroll>
           <div className="grid grid-cols-12 mx-auto md:m-24 bg-[#effdf5] p-4 rounded-md  ">
             <div className="col-span-12  flex flex-wrap lg:flex-nowrap bg-white h-full  text-center p-4 border-dashed border mx-auto border-[#00B98E] rounded-md">
               <Image
@@ -212,22 +137,6 @@ export default function Home() {
                 );
               }
             )}
-          </div>
-        </FadeUpOnScroll>
-        {/* testiminomials */}
-        <FadeUpOnScroll>
-          <div className="flex flex-col items-center justify-center mx-auto my-10 ">
-            <div className="text-center space-y-4">
-              <h1 className="text-5xl font-bold text-[#0e2e50]">
-                Our Clients Say!
-              </h1>
-              <p className="text-gray-500">
-                Eirmod sed ipsum dolor sit rebum labore magna erat. Tempor ut
-                dolore lorem kasd <br /> vero ipsum sit eirmod sit. Ipsum diam
-                justo sed rebum vero dolor duo.
-              </p>
-            </div>
-            <Testmonial />
           </div>
         </FadeUpOnScroll>
         {/* footer */}
