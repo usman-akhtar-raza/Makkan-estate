@@ -155,8 +155,8 @@ export default function Home() {
                 height={500}
                 className="rounded-lg"
               />
-              <div className="ml-16 space-y-4 mt-12 text-start">
-                <h1 className="font-semibold text-5xl  text-[#0e2e50]">
+              <div className="sm:ml-16 space-y-4 mt-12 text-start">
+                <h1 className="font-semibold text-xl sm:text-5xl  text-[#0e2e50]">
                   Contact With Our <br /> Certified Agent
                 </h1>
                 <p className="text-gray-500">
@@ -235,6 +235,7 @@ export default function Home() {
           <Footer />
         </div>
       </div>
+      
     </>
   );
 }

@@ -26,8 +26,8 @@ export default function Home() {
           </p>
 
           {/* Contact Info Section */}
-          <div className="flex space-x-4 justify-center">
-            <div className="col-span-12  bg-[#effdf5] p-4 rounded-md ml-8 sm:ml-0 w-[300px] md:w-[400px] cursor-pointer">
+          <div className="flex flex-col sm:flex-row flex-wrap  gap-4 justify-center">
+            <div className="  bg-[#effdf5] p-4 rounded-md  sm:ml-0 w-[300px] md:w-[400px] cursor-pointer">
               <div className="flex flex-col space-y-4 justify-center items-center  bg-white p-4 border-dashed border mx-auto border-[#00B98E] rounded-md">
                 <span className="block font-semibold text-gray-700">
                   📍 Location
@@ -35,7 +35,7 @@ export default function Home() {
                 <p className="text-sm text-gray-600">123 St, New York, USA</p>
               </div>
             </div>
-            <div className="col-span-12  bg-[#effdf5] p-4 rounded-md ml-8 sm:ml-0 w-[300px] md:w-[400px] cursor-pointer">
+            <div className="  bg-[#effdf5] p-4 rounded-md  sm:ml-0 w-[300px] md:w-[400px] cursor-pointer">
               <div className="flex flex-col space-y-4 justify-center items-center  bg-white p-4 border-dashed border mx-auto border-[#00B98E] rounded-md">
                 <span className="block font-semibold text-gray-700">
                   📧 Email
@@ -43,7 +43,7 @@ export default function Home() {
                 <p className="text-sm text-gray-600">info@company.com</p>
               </div>
             </div>
-            <div className="col-span-12  bg-[#effdf5] p-4 rounded-md ml-8 sm:ml-0 w-[300px] md:w-[400px] cursor-pointer">
+            <div className="  bg-[#effdf5] p-4 rounded-md  sm:ml-0 w-[300px] md:w-[400px] cursor-pointer">
               <div className="flex flex-col space-y-4 justify-center items-center  bg-white p-4 border-dashed border mx-auto border-[#00B98E] rounded-md">
                 <span className="block font-semibold text-gray-700">
                   📞 Phone
@@ -53,7 +53,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="flex gap-4">
+          <div className="flex flex-col sm:flex-row justify-center gap-y-10 sm:gap-y-0 gap-4">
             {/* Map Embed */}
             <div className="w-full max-w-lg h-[370px] bg-white rounded overflow-hidden shadow-md">
               <iframe

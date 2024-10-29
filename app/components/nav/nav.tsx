@@ -198,7 +198,12 @@ export default function Navbar() {
         {/* Left: Logo */}
         <div className="flex items-center space-x-4">
           <div className="flex items-center">
-            <Image src="/images/icon-deal.png" alt="Logo" width={32} height={32} />
+            <Image
+              src="/images/icon-deal.png"
+              alt="Logo"
+              width={32}
+              height={32}
+            />
             <span className="text-xl font-bold text-[#00B98E] ml-2">
               Makaan
             </span>
@@ -239,19 +244,19 @@ export default function Navbar() {
                 >
                   <div className="py-1">
                     <Link
-                      href="/property/houses"
+                      href="/"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                     >
                       Houses
                     </Link>
                     <Link
-                      href="/property/apartments"
+                      href="/"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                     >
                       Apartments
                     </Link>
                     <Link
-                      href="/property/commercial"
+                      href="/"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                     >
                       Commercial
@@ -281,19 +286,19 @@ export default function Navbar() {
                 >
                   <div className="py-1">
                     <Link
-                      href="/pages/blog"
+                      href="/"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                     >
                       Blog
                     </Link>
                     <Link
-                      href="/pages/faq"
+                      href="/"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                     >
                       FAQ
                     </Link>
                     <Link
-                      href="/pages/contact"
+                      href="/"
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                     >
                       Contact Us
