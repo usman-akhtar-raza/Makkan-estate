@@ -1,14 +1,14 @@
 function SearchBar() {
   return (
     <>
-      <div className=" grid px-20 lg:pl-10 lg:gap-0 gap-4 md:grid-cols-2 lg:grid-cols-4 bg-[#00B98E] py-10 mt-1">
+      <div className=" grid  lg:pl-10 place-items-center lg:gap-0 gap-4 md:grid-cols-2 lg:grid-cols-4 bg-[#00B98E] py-10 mt-1">
         <div>
           <input
             type="text"
             name=""
             id=""
             placeholder="Search Keyword"
-            className="border-0 py-3 px-14 rounded-lg  col-span-12 md:col-span-4"
+            className="border-0 py-3  px-14 rounded-lg  col-span-12 md:col-span-4"
           />
         </div>
         <div>

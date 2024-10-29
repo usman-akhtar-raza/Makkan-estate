@@ -18,6 +18,7 @@ export default function Home() {
         <FadeUpOnScroll>
           <SearchBar />
         </FadeUpOnScroll>
+        {/* about start */}
         <FadeUpOnScroll>
           <div className="grid grid-cols-12 md:mx-20 mt-28 overflow-x-hidden">
             <div className="col-span-6 bg-[#00B98E] relative left-[-50%] h-[600px]  skew-x-[20deg] z-[1]"></div>
@@ -69,19 +70,19 @@ export default function Home() {
           </div>
         </FadeUpOnScroll>
 
-             {/* cta */}
-             <FadeUpOnScroll>
-          <div className="grid grid-cols-12 mx-auto md:m-24 bg-[#effdf5] p-4 rounded-md  ">
+        {/* cta */}
+        <FadeUpOnScroll>
+          <div className="grid grid-cols-12  md:m-24 bg-[#effdf5] p-2 sm:p-4 rounded-md mt-96 sm:mt-0">
             <div className="col-span-12  flex flex-wrap lg:flex-nowrap bg-white h-full  text-center p-4 border-dashed border mx-auto border-[#00B98E] rounded-md">
               <Image
                 src={"/images/call-to-action.jpg"}
                 alt={"call to action "}
                 width={500}
                 height={500}
-                className="rounded-lg"
+                className="rounded-lg w-[300px] sm:w-full"
               />
-              <div className="ml-16 space-y-4 mt-12 text-start">
-                <h1 className="font-semibold text-5xl  text-[#0e2e50]">
+              <div className="sm:ml-16 space-y-4 mt-12 text-start">
+                <h1 className="font-semibold text-xl sm:text-5xl  text-[#0e2e50]">
                   Contact With Our <br /> Certified Agent
                 </h1>
                 <p className="text-gray-500">
