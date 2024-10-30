@@ -1,5 +1,5 @@
 "use client";
-
+import { useForm } from "react-hook-form";
 import Nav from "../components/nav/nav";
 import Header from "../components/header/header";
 
@@ -9,6 +9,17 @@ import FadeUpOnScroll from "../components/fadeUpOnScroll/fadeUpOnscroll";
 import Footer from "../components/footer/footer";
 
 export default function Home() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  // console.log(errors);
+  const onSubmit = (data: any) => {
+    console.log("Form Data:", data);
+    alert("Message sent successfully!");
+  };
   return (
     <>
       <div className="">
@@ -67,28 +78,61 @@ export default function Home() {
             </div>
 
             {/* Contact Form */}
-            <form className="w-full max-w-lg bg-white p-6 rounded shadow-md space-y-4">
+            <form
+              onSubmit={handleSubmit(onSubmit)}
+              className="w-full max-w-lg bg-white p-6 rounded shadow-md space-y-4"
+            >
               <div className="flex space-x-4">
                 <input
                   type="text"
                   placeholder="Your Name"
+                  {...register("name", { required: "Name is required" })}
                   className="w-1/2 p-2 border border-gray-300 rounded"
                 />
+                {errors.name && (
+                  <span className="text-red-500 text-sm">
+                    {errors.name.message}
+                  </span>
+                )}
                 <input
                   type="email"
                   placeholder="Your Email"
+                  {...register("email", {
+                    required: "Email is required",
+                    pattern: {
+                      value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+                      message: "Invalid email address",
+                    },
+                  })}
                   className="w-1/2 p-2 border border-gray-300 rounded"
                 />
+                {errors.email && (
+                  <span className="text-red-500 text-sm">
+                    {errors.email.message}
+                  </span>
+                )}
               </div>
               <input
                 type="text"
                 placeholder="Subject"
+                {...register("subject", { required: "Subject is required" })}
                 className="w-full p-2 border border-gray-300 rounded"
               />
+              {errors.subject && (
+                <span className="text-red-500 text-sm">
+                  {errors.subject.message}
+                </span>
+              )}
               <textarea
                 placeholder="Message"
+                {...register("message", { required: "Message is required" })}
                 className="w-full p-2 border border-gray-300 rounded h-32 resize-none"
               ></textarea>
+              {errors.message && (
+                <span className="text-red-500 text-sm">
+                  {errors.message.message}
+                </span>
+              )}
               <button
                 type="submit"
                 className="w-full bg-green-500 text-white py-2 rounded hover:bg-green-600 transition"
