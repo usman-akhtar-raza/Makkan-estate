@@ -18,8 +18,7 @@ function PropertyCard({
 }) {
   return (
     <FadeLeftOnScroll>
-
-      <div className="w-[350px] space-y-4 rounded-lg shadow-xl cursor-pointer [&>div>img]:hover:scale-105 overflow-hidden  ">
+      <div className="w-[350px] space-y-4  rounded-lg shadow-xl cursor-pointer [&>div>img]:hover:scale-105 overflow-hidden  ">
         <div className="overflow-hidden">
           <img
             src={url}
@@ -67,7 +66,7 @@ function PropertyCard({
           </p>
         </div>
       </div>
-      </FadeLeftOnScroll>
+    </FadeLeftOnScroll>
   );
 }
 export default PropertyCard;

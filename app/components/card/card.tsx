@@ -1,5 +1,5 @@
 import Image from "next/image";
-import  FadeLeftOnScroll  from "../fadeLeftOnScroll/fadeLeftOnScroll";
+import FadeLeftOnScroll from "../fadeLeftOnScroll/fadeLeftOnScroll";
 function Card({
   url,
   title,
@@ -12,7 +12,7 @@ function Card({
   return (
     <>
       <FadeLeftOnScroll>
-        <div className="col-span-12  bg-[#effdf5] p-4 rounded-md w-full h-[200px]  [&>div]:hover:bg-[#00B98E] [&>div]:hover:text-white [&>div>p]:hover:text-white cursor-pointer">
+        <div className="col-span-12   bg-[#effdf5] p-4 rounded-md w-[300px] h-[200px]  [&>div]:hover:bg-[#00B98E] [&>div]:hover:text-white [&>div>p]:hover:text-white cursor-pointer">
           <div className="bg-white h-full [&>p]:text-green-600  text-center p-4 border-dashed border mx-auto border-[#00B98E] rounded-md">
             <Image
               src={url}

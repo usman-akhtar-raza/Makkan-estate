@@ -7,7 +7,7 @@ function Header({}) {
         <div className="grid grid-cols-12 gap-4">
           {/* Left column: Heading, subtitle, and button */}
           <div className=" col-span-12 md:col-span-6  mx-20 mt-12">
-            <h1 className="text-[#0e2e50] animate-fade text-4xl font-extrabold">
+            <h1 className="text-[#0e2e50] animate-fade text-xl sm:text-4xl font-extrabold">
               Find A{" "}
               <span className=" text-[#00B98E] animate-fade">Perfect Home</span>{" "}
               To Live With Your Family

@@ -33,7 +33,7 @@ export default function Home() {
               justo sed rebum vero dolor duo.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 md:mx-20  gap-4">
+          <div className="grid grid-cols-1 place-items-c enter justify-items-center gap-y-3 md:grid-cols-2 xl:grid-cols-4 md:mx-16  ">
             {data.map((item) => {
               return (
                 <div key={item.title} className="">
@@ -124,7 +124,7 @@ export default function Home() {
           </FadeRightOnScroll>
         </div>
         <FadeUpOnScroll>
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 mx-auto gap-y-6 lg:ml-20">
+          <div className="grid grid-cols-1 place-items-center justify-items-center md:grid-cols-2 xl:grid-cols-3 mx-auto gap-y-6 ">
             {propertyList.map((item) => {
               return (
                 <PropertyCard
@@ -235,7 +235,6 @@ export default function Home() {
           <Footer />
         </div>
       </div>
-      
     </>
   );
 }
