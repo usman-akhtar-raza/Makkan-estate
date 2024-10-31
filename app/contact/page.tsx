@@ -8,15 +8,21 @@ import FadeUpOnScroll from "../components/fadeUpOnScroll/fadeUpOnscroll";
 
 import Footer from "../components/footer/footer";
 
+interface FormData {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+}
 export default function Home() {
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
+  } = useForm<FormData>();
 
   // console.log(errors);
-  const onSubmit = (data: any) => {
+  const onSubmit = (data: FormData) => {
     console.log("Form Data:", data);
     alert("Message sent successfully!");
   };
@@ -91,7 +97,7 @@ export default function Home() {
                 />
                 {errors.name && (
                   <span className="text-red-500 text-sm">
-                    {errors.name.message}
+                    {String(errors.name.message)}
                   </span>
                 )}
                 <input
@@ -108,7 +114,7 @@ export default function Home() {
                 />
                 {errors.email && (
                   <span className="text-red-500 text-sm">
-                    {errors.email.message}
+                    {String(errors.email.message)}
                   </span>
                 )}
               </div>
@@ -120,7 +126,7 @@ export default function Home() {
               />
               {errors.subject && (
                 <span className="text-red-500 text-sm">
-                  {errors.subject.message}
+                  {String(errors.subject.message)}
                 </span>
               )}
               <textarea
@@ -130,7 +136,7 @@ export default function Home() {
               ></textarea>
               {errors.message && (
                 <span className="text-red-500 text-sm">
-                  {errors.message.message}
+                  {String(errors.message.message)}
                 </span>
               )}
               <button
