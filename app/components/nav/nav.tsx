@@ -5,12 +5,16 @@ import Link from "next/link";
 import Image from "next/image";
 import { FaHome } from "react-icons/fa";
 import { HiX } from "react-icons/hi";
+import AddPropertyModal from "../addPropertyModal/propertyModal";
 export default function Navbar() {
   const [isPropertyDropdownOpen, setPropertyDropdownOpen] = useState(false);
   const [isPagesDropdownOpen, setPagesDropdownOpen] = useState(false);
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
+  const [isModalOpen, setModalOpen] = useState(false);
 
+  const handleOpenModal = () => setModalOpen(true);
+  const handleCloseModal = () => setModalOpen(false);
   // Handle scroll event to apply sticky class
   useEffect(() => {
     const handleScroll = () => {
@@ -30,10 +34,10 @@ export default function Navbar() {
       initial={{ y: -10, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.1 }}
-      className={`bg-white shadow-md px-4 md:px-12 z-[9999] ${
+      className={`bg-white shadow-md h-[70px] px-4 md:px-12 z-[9999] ${
         isSticky
           ? "fixed top-0 left-0 w-full"
-          : "relative mt-[45px] w-[90%] mx-auto"
+          : "relative mt-[30px] w-[90%] mx-auto"
       }`}
     >
       <div className="container mx-auto flex justify-between items-center py-3">
@@ -168,14 +172,16 @@ export default function Navbar() {
 
         {/* Right: Add Property Button (Desktop) */}
         <motion.div className="hidden md:block" whileHover={{ scale: 1.05 }}>
-          <Link
-            href="/add-property"
+          <button
+            onClick={handleOpenModal}
             className="bg-[#00B98E] text-white px-4 py-2 rounded-md"
           >
             Add Property
-          </Link>
+          </button>
         </motion.div>
       </div>
+
+      <AddPropertyModal isOpen={isModalOpen} onClose={handleCloseModal}  />
 
       {/* Mobile Menu */}
       <AnimatePresence>
