@@ -24,7 +24,7 @@ const AddPropertyModal = ({
   if (!isOpen) return null;
 
   return (
-    <div className="absolute -top-6  inset-0 flex items-center justify-center bg-black bg-opacity-50 backdrop-blur-xl h-screen  ">
+    <div className="absolute top-0  inset-0 flex items-center justify-center bg-black bg-opacity-50 backdrop-blur-xl h-screen  ">
       <div className="bg-white  p-5 rounded-md shadow-lg max-w-sm w-full">
         <button
           onClick={onClose}
