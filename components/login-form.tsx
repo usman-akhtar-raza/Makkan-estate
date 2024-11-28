@@ -12,8 +12,8 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import Image from "next/image";
-import { useEffect, useState } from "react";
-import { useForm } from "react-hook-form";
+import {  useState } from "react";
+import { FieldValues, useForm } from "react-hook-form";
 import {  useRouter } from "next/navigation";
 
 export function LoginForm() {
@@ -24,26 +24,26 @@ export function LoginForm() {
   } = useForm();
   const [loading, setLoading] = useState(false);
  const router = useRouter()
-  const onSubmit = async (data: any) => {
-    setLoading(true);
-    try {
-      const res = await fetch("http://localhost:3006/user/validate", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
-      const response = await res.json();
-      router.push("/dashboard");
-      console.log(response);
-    } catch (error) {
-      console.error(error);
-    } finally {
-      setLoading(false);
-    }
-  };
-
+ const onSubmit = async (data: FieldValues) => {
+  const { email, password } = data as { email: string; password: string };
+  setLoading(true);
+  try {
+    const res = await fetch("http://localhost:3006/user/validate", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email, password }),
+    });
+    const response = await res.json();
+    router.push("/dashboard");
+    console.log(response);
+  } catch (error) {
+    console.error(error);
+  } finally {
+    setLoading(false);
+  }
+};
   return (
     <Card className="mx-auto max-w-sm border-[#00B98E]">
       <CardHeader>

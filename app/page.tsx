@@ -13,14 +13,14 @@ import TeamCard from "./components/teamCard/teamCard";
 import teamData, { data, propertyList } from "../data/data";
 import Testmonial from "./components/testmonial/testmonial";
 import Footer from "./components/footer/footer";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 export default function Home() {
-const [ propertyData, setPropertyData] = useState([])
+// const [ propertyData, setPropertyData] = useState([])
 useEffect(() => {
   const getData = async () => {
-    let res = await fetch("http://localhost:3001/house");
-    let data = await res.json();
+    const res = await fetch("http://localhost:3001/house");
+    const data = await res.json();
     // setPropertyData(data);
     console.log(data);
   };

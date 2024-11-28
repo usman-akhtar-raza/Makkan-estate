@@ -1,7 +1,7 @@
 "use client";
 import { LoginForm } from "@/components/login-form";
 import Image from "next/image";
-import { useEffect } from "react";
+
 export default function Page() {
   return (
     <div className="flex h-screen w-full items-center justify-center px-2 gap-4 ">
