@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
@@ -11,8 +12,38 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import Image from "next/image";
+import { useEffect, useState } from "react";
+import { useForm } from "react-hook-form";
+import {  useRouter } from "next/navigation";
 
 export function LoginForm() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+  const [loading, setLoading] = useState(false);
+ const router = useRouter()
+  const onSubmit = async (data: any) => {
+    setLoading(true);
+    try {
+      const res = await fetch("http://localhost:3006/user/validate", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+      const response = await res.json();
+      router.push("/dashboard");
+      console.log(response);
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <Card className="mx-auto max-w-sm border-[#00B98E]">
       <CardHeader>
@@ -32,48 +63,60 @@ export function LoginForm() {
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <div className="grid gap-4">
-          <div className="grid gap-2">
-            <Label htmlFor="email">Email</Label>
-            <Input
-              id="email"
-              type="email"
-              placeholder="m@example.com"
-              required
-            />
-          </div>
-          <div className="grid gap-2">
-            <div className="flex items-center">
-              <Label htmlFor="password">Password</Label>
-              <Link href="#" className="ml-auto inline-block text-sm underline">
-                Forgot your password?
-              </Link>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <div className="grid gap-4">
+            <div className="grid gap-2">
+              <Label htmlFor="email">Email</Label>
+              <Input
+                id="email"
+                type="email"
+                placeholder="m@example.com"
+                {...register("email", { required: true })}
+              />
+              {errors.email && <p>Email is required</p>}
             </div>
-            <Input id="password" type="password" required />
+            <div className="grid gap-2">
+              <div className="flex items-center">
+                <Label htmlFor="password">Password</Label>
+                <Link
+                  href="#"
+                  className="ml-auto inline-block text-sm underline"
+                >
+                  Forgot your password?
+                </Link>
+              </div>
+              <Input
+                id="password"
+                type="password"
+                {...register("password", { required: true })}
+              />
+              {errors.password && <p>Password is required</p>}
+            </div>
+            <Button
+              type="submit"
+              className="w-full bg-[#00B98E] hover:bg-[#00B10E]"
+              disabled={loading}
+            >
+              {loading ? "Loading..." : "Login"}
+            </Button>
+            <Button variant="outline" className="w-full">
+              <Image
+                src={"/images/google icon.png"}
+                alt={""}
+                className="rounded-full"
+                width={30}
+                height={30}
+              />
+              Login with Google
+            </Button>
           </div>
-          <Button
-            type="submit"
-            className="w-full bg-[#00B98E] hover:bg-[#00B10E]"
-          >
-            Login
-          </Button>
-          <Button variant="outline" className="w-full">
-            <Image
-              src={"/images/google icon.png"}
-              alt={""}
-              className="rounded-full"
-              width={30}
-              height={30}
-            />
-            Login with Google
-          </Button>
-        </div>
-        <div className="mt-4 text-center text-sm">
-          Don&apos;t have an account?{" "}
-          <Link href="#" className="underline">
-            Sign up
-          </Link>
-        </div>
+          <div className="mt-4 text-center text-sm">
+            Don&apos;t have an account?{" "}
+            <Link href="#" className="underline">
+              Sign up
+            </Link>
+          </div>
+        </form>
       </CardContent>
     </Card>
   );
