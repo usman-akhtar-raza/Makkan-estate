@@ -171,7 +171,7 @@ export default function Navbar() {
         </div>
 
         {/* Right: Add Property Button (Desktop) */}
-        <motion.div className="hidden md:block" whileHover={{ scale: 1.05 }}>
+        <motion.div className="hidden md:block  " whileHover={{ scale: 1.05 }}>
           <button
             onClick={handleOpenModal}
             className="bg-[#00B98E] text-white px-4 py-2 rounded-md"
@@ -179,9 +179,17 @@ export default function Navbar() {
             Add Property
           </button>
         </motion.div>
+        <motion.div
+          className="hidden md:block md:-ml-32 "
+          whileHover={{ scale: 1.05 }}
+        >
+          <button className="bg-[#00B98E] text-white px-4 py-2 rounded-md">
+            <Link href="/dashboard"> Dashboard</Link>
+          </button>
+        </motion.div>
       </div>
 
-      <AddPropertyModal isOpen={isModalOpen} onClose={handleCloseModal}  />
+      <AddPropertyModal isOpen={isModalOpen} onClose={handleCloseModal} />
 
       {/* Mobile Menu */}
       <AnimatePresence>

@@ -13,21 +13,19 @@ import TeamCard from "./components/teamCard/teamCard";
 import teamData, { data, propertyList } from "../data/data";
 import Testmonial from "./components/testmonial/testmonial";
 import Footer from "./components/footer/footer";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function Home() {
-// const [ propertyData, setPropertyData] = useState([])
-useEffect(() => {
-  const getData = async () => {
-    const res = await fetch("http://localhost:3001/house");
-    const data = await res.json();
-    // setPropertyData(data);
-    console.log(data);
-  };
-
-  getData();
-}, [])
-
+  const [propertyData, setPropertyData] = useState([]);
+  useEffect(() => {
+    const getData = async () => {
+      const res = await fetch("http://localhost:3006/house");
+      const data = await res.json();
+      setPropertyData(data);
+      console.log(data);
+    };
+    getData();
+  }, []);
 
   return (
     <>
@@ -139,7 +137,19 @@ useEffect(() => {
         </div>
         <FadeUpOnScroll>
           <div className="grid grid-cols-1 place-items-center justify-items-center md:grid-cols-2 xl:grid-cols-3 mx-auto gap-y-6 ">
-            {propertyList.map((item) => {
+            {propertyData.map((House) => {
+              return (
+                <PropertyCard
+                  price={House.Price}
+                  status={House.Status}
+                  category={House.Category}
+                  location={House.Location}
+                  url={House.Image}
+                />
+              );
+            })}
+
+            {/* {propertyList.map((item) => {
               return (
                 <PropertyCard
                   url={item.url}
@@ -150,7 +160,7 @@ useEffect(() => {
                   location={item.location}
                 />
               );
-            })}
+            })} */}
           </div>
           <div className="flex justify-center">
             <button className="bg-[#00B98E] text-white mt-10 rounded-md hover:bg-[#00b963] px-6 py-4 ">
