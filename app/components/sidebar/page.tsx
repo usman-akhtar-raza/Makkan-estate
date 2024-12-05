@@ -61,6 +61,7 @@ import { FaDashcube, FaLocationArrow, FaInbox } from "react-icons/fa";
 import { IoSettingsOutline } from "react-icons/io5";
 import { TiThMenu } from "react-icons/ti";
 import { FaHouseMedical } from "react-icons/fa6";
+import Link from "next/link";
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -94,7 +95,7 @@ const Sidebar = () => {
         <ul className="mt-12 space-y-4 text-sm p-4">
           <li className="p-2 hover:bg-gray-200 cursor-pointer flex items-center space-x-2">
             <FaDashcube />
-            <span>Dashboard</span>
+            <span><Link href="/">Dashboard</Link></span>
           </li>
           <li className="p-2 hover:bg-gray-200 cursor-pointer flex items-center space-x-2">
             <FaLocationArrow />

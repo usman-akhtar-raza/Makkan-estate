@@ -113,7 +113,7 @@ const AddPropertyModal = ({
     data.append("Status", formData.Status);
     data.append("Category", formData.Category);
     data.append("Location", formData.Location);
-    
+
     // Append image if it exists
     if (formData.Image) {
       data.append("Image", formData.Image);
@@ -160,14 +160,14 @@ const AddPropertyModal = ({
           ×
         </button>
         <form
-          className="bg-[#00B98E] text-center text-black p-2"
+          className="bg-[#00B98E] text-center space-y-2  text-black p-2"
           onSubmit={handleSubmit}
         >
-          <div>
+          <div className="flex justify-between">
             <label htmlFor="Price">Price</label>
             <input
-              className="text-black"
-              placeholder="value"
+              className="text-black rounded-lg px-6"
+              placeholder="Price"
               type="number"
               name="Price"
               value={formData.Price}
@@ -175,9 +175,11 @@ const AddPropertyModal = ({
               required
             />
           </div>
-          <div>
+          <div className="flex justify-between">
             <label htmlFor="Status">Status</label>
             <input
+              className="text-black rounded-lg px-6"
+              placeholder=""
               type="text"
               name="Status"
               value={formData.Status}
@@ -185,9 +187,10 @@ const AddPropertyModal = ({
               required
             />
           </div>
-          <div>
+          <div className="flex justify-between">
             <label htmlFor="Category">Category</label>
             <input
+              className="text-black rounded-lg px-6"
               type="text"
               name="Category"
               value={formData.Category}
@@ -195,9 +198,10 @@ const AddPropertyModal = ({
               required
             />
           </div>
-          <div>
+          <div className="flex justify-between">
             <label htmlFor="Location">Location</label>
             <input
+              className="text-black rounded-lg px-6"
               type="text"
               name="Location"
               value={formData.Location}
@@ -205,7 +209,7 @@ const AddPropertyModal = ({
               required
             />
           </div>
-          <div>
+          <div className="flex justify-between">
             <label htmlFor="Image">Image</label>
             <input
               type="file"
