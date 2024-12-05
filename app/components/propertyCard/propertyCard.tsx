@@ -21,7 +21,7 @@ function PropertyCard({
       <div className="w-[350px] space-y-4  rounded-lg shadow-xl cursor-pointer [&>div>img]:hover:scale-105 overflow-hidden  ">
         <div className="overflow-hidden">
           <img
-            src={url}
+            src={`data:image/jpg;base64,${url}`}
             alt=""
             className="transition-all duration-500 overflow-hidden"
           />

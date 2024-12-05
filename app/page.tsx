@@ -15,8 +15,18 @@ import Testmonial from "./components/testmonial/testmonial";
 import Footer from "./components/footer/footer";
 import { useEffect, useState } from "react";
 
+
+
+
+interface House {
+  Price: number;
+  Status: string;
+  Category: string;
+  Location: string;
+  Image: string;
+}
 export default function Home() {
-  const [propertyData, setPropertyData] = useState([]);
+  const [propertyData, setPropertyData] = useState<House[]>([]);
   useEffect(() => {
     const getData = async () => {
       const res = await fetch("http://localhost:3006/house");
@@ -144,7 +154,16 @@ export default function Home() {
                   status={House.Status}
                   category={House.Category}
                   location={House.Location}
-                  url={House.Image}
+                  url={`${House.Image}`}
+                  // {House.Image && propertyList.map((item) => {
+                  //   return (
+                  //     <Image
+                  //       src={item.url} alt={""}
+                  //       width={300}
+                  //       height={300}
+                  //       />
+                      
+                  // })}
                 />
               );
             })}
