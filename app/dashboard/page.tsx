@@ -87,13 +87,14 @@ import Sidebar from "../components/sidebar/page";
 import Navbar from "../components/navbar/navbar";
 import Dashboard from "../components/dashboard/dasboard";
 import { useSession } from "next-auth/react";
-import { redirect } from "next/navigation";
+// import { redirect } from "next/navigation";
 const DashboardPage = () => {
   const { data: session } = useSession();
   // if (!session) {
   //   redirect("/login" );
   // }
 
+  console.log(session);
   if (!session) {
     return (
       <div className="flex">

@@ -1,5 +1,5 @@
 "use client";
-import { useSession, signIn, signOut } from "next-auth/react";
+import { useSession } from "next-auth/react";
 import { LoginForm } from "@/components/login-form";
 import Image from "next/image";
 
@@ -9,6 +9,7 @@ export default function Page() {
   const { data: session } = useSession();
 
   if (session) {
+    // console.log(session);
     redirect("/dashboard");
   }
 

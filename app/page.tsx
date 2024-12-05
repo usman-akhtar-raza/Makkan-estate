@@ -10,7 +10,7 @@ import PropertyCard from "./components/propertyCard/propertyCard";
 import FadeLeftOnScroll from "./components/fadeLeftOnScroll/fadeLeftOnScroll";
 import FadeRightOnScroll from "./components/fadeRightOnScroll/fadeRightOnScroll";
 import TeamCard from "./components/teamCard/teamCard";
-import teamData, { data, propertyList } from "../data/data";
+import teamData, { data } from "../data/data";
 import Testmonial from "./components/testmonial/testmonial";
 import Footer from "./components/footer/footer";
 import { useEffect, useState } from "react";
@@ -150,6 +150,7 @@ export default function Home() {
             {propertyData.map((House) => {
               return (
                 <PropertyCard
+                key={House.Price}
                   price={House.Price}
                   status={House.Status}
                   category={House.Category}

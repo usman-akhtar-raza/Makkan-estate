@@ -24,11 +24,13 @@ export function LoginForm() {
   } = useForm();
   const [loading, setLoading] = useState(false);
  const router = useRouter()
+
+ 
  const onSubmit = async (data: FieldValues) => {
   const { email, password } = data as { email: string; password: string };
   setLoading(true);
   try {
-    const res = await fetch("http://localhost:3006/user/validate", {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/user/validate`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

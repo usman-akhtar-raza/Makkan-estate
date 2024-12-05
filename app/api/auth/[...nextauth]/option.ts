@@ -1,4 +1,4 @@
-import NextAuth, { NextAuthOptions } from "next-auth";
+import  { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 
 export const AuthOptions: NextAuthOptions = {
@@ -12,7 +12,7 @@ export const AuthOptions: NextAuthOptions = {
       async authorize(credentials) {
         // Call your Nest.js API endpoint for login
         const response = await fetch(
-          `${process.env.NEXT_PUBLIC_API_URL}/auth/login`,
+          `${process.env.NEXT_PUBLIC_API_URL}/user/validate`,
           {
             method: "POST",
             headers: {
@@ -43,7 +43,7 @@ export const AuthOptions: NextAuthOptions = {
   ],
   pages: {
     signIn: "/login",
-    dashboard: "/dashboard",
+    
   },
 
   callbacks: {
